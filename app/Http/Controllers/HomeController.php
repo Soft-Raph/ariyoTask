@@ -42,15 +42,15 @@ class HomeController extends Controller
     {
         DB::beginTransaction();
         try {
-            $state = $this->state->create([
+            $state = $this->state->updateOrCreate([
                 'name'=> $request->state_name,
             ]);
 
-            $lga = $this->lga->create([
+            $lga = $this->lga->updateOrCreate([
                 'name'=> $request->lga_name,
                 'state_id' =>$state->id,
             ]);
-            $ward = $this->ward->create([
+            $ward = $this->ward->updateOrCreate([
                 'name'=> $request->ward_name,
                 'lga_id' =>$lga->id,
             ]);
