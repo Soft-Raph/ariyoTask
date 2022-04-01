@@ -74,6 +74,7 @@ class HomeController extends Controller
         }
     }
 
+    //show report of the number of citizens in the country,state,LGA and ward.
     public function show()
     {
         $userCount = Citizen::count();

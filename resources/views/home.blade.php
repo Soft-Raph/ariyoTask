@@ -3,18 +3,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <p class="mt-8  dark:bg-gray-800 text-lg">Register citizens with their name,ward,LGA,State, phone_number and gender</p>
             <form action="{{route('register.citizen')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
+                    <label for="exampleInputEmail1" class="m-2">Name:</label>
                     <input type="text" class="form-control" id="exampleInputName" name="citizen_name" aria-describedby="nameHelp" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Phone Number</label>
+                    <label for="exampleInputEmail1" class="m-2">Phone Number:</label>
                     <input type="text" class="form-control" id="exampleInputNumber" name="phone" aria-describedby="numberHelp" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Gender</label>
+                    <label for="exampleInputEmail1" class="m-2">Gender:</label>
                     <select onchange="toggleLGA(this);" name="gender" id="state" class="form-control" required>
                         <option value="" selected="selected">- Select -</option>
                         <option value="male">male</option>
@@ -22,11 +23,11 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Address</label>
+                    <label for="exampleInputEmail1" class="m-2">Address:</label>
                     <input type="text" class="form-control" id="exampleInputAddress" name="address" aria-describedby="addressHelp" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">State</label>
+                    <label for="exampleInputEmail1" class="m-2">State:</label>
                     <select onchange="toggleLGA(this);" name="state_name" id="state" class="form-control" required>
                         <option value="" selected="selected">- Select -</option>
                         <option value="Abia">Abia</option>
@@ -69,28 +70,19 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">LGA</label>
+                    <label for="exampleInputEmail1" class="m-2">LGA:</label>
                     <select name="lga_name" id="lga" class="form-control select-lga" required>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Ward</label>
+                    <label for="exampleInputEmail1" class="m-2">Ward:</label>
                     <input type="text" class="form-control" id="exampleInputAddress" name="ward_name" aria-describedby="addressHelp" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary m-2">Submit</button>
             </form>
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
 <script src="{{'js/lga.min.js'}}"></script>
 <script src="{{'js/lga.js'}}"></script>
 @include('sweetalert::alert')
